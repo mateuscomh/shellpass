@@ -34,15 +34,11 @@ Basic password generation:
 ```bash
 $ ./shellPass.sh
 ```
-
 To generate a password with specific length (ex: 20 chars):
 ```bash
 $ ./shellPass.sh 20
 ```
-To generate multiple passwords (ex: 5 passwords of 16 chars each):
-```bash
-$ ./shellPass.sh 16 5
-```
+
 To show the help menu with all available options:
 ```bash
 $ ./shellPass.sh -h
