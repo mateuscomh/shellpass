@@ -9,13 +9,12 @@ A lightweight, secure, and customizable password generator for command-line enth
 
 ## ✨ Features
 
-- Generate cryptographically secure passwords using /dev/random
-- Blazing fast execution with zero dependencies
+- Generate cryptographically secure passwords using /dev/urandom
+- Password generated direct on your clippboard (Ctrl+C) - look dependencies
+- Blazing fast execution 
 - Customizable password length and complexity
 - Cross-platform support (Linux, macOS, WSL2)
 - Copy to clipboard functionality (where available)
-- Multiple password generation in one command
-- Strength indicator for generated passwords
 
 ## 🚀 Installation
 
@@ -30,7 +29,7 @@ chmod +x shellPass.sh
 sudo cp shellPass.sh /usr/local/bin/shellpass
 ```
 Basic password generation:
-    To generate a default 12-character password, run:
+    To generate a default password, run and set quantity and complexity of password:
 ```bash
 $ ./shellPass.sh
 ```
@@ -44,7 +43,6 @@ To show the help menu with all available options:
 $ ./shellPass.sh -h
 ```
 
-Pro Tip:
 For quick access, add this alias to your shell configuration file (.bashrc, .zshrc, etc.):
 ```bash
 $ alias passgen='~/path/to/shellPass.sh'
