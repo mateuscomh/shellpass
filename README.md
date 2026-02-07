@@ -5,17 +5,19 @@
 [![Build Status](https://github.com/mateuscomh/shellPass/actions/workflows/super-linter.yml/badge.svg)](https://github.com/mateuscomh/shellPass/actions/workflows/super-linter.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mateuscomh/shellPass/pulls)
 
-A lightweight, secure, and customizable password generator for command-line enthusiasts.
+A lightweight, secure, and customizable password and words generator for command-line enthusiasts.
 
 ## ✨ Features
 
 - Generate cryptographically secure passwords using /dev/urandom
+- 
 - Password generated direct on your clippboard (Ctrl+C) - look dependencies
 - Blazing fast execution 
 - Customizable password length and complexity
 - Cross-platform support (Linux, macOS, WSL2)
 - Copy to clipboard functionality (where available)
-
+- Short history local on .gitignore
+  
 ## 🚀 Installation
 
 ### Basic Installation
