@@ -43,9 +43,9 @@ main() {
 }
 
 _checkSize() {
-	while [[ -z "$MAX" || ! "$MAX" =~ ^[1-9][0-9]{0,3}$ || ${#MAX} -gt 4 ]]; do
-		if [[ ${#MAX} -gt 4 ]]; then
-			echo "${BOLD}  Enter up to 4 digits for the password or [Q]uit.${CLOSE}"
+	while [[ -z "$MAX" || ! "$MAX" =~ ^[1-9][0-9]{0,3}$ || ${#MAX} -gt 3 ]]; do
+		if [[ ${#MAX} -gt 3 ]]; then
+			echo "${BOLD}  Enter up to 3 digits for the password or [Q]uit.${CLOSE}"
 			read -r MAX
 		else
 			echo -e "${BOLD} Enter the QUANTITY of characters for the password or [Q]uit: ${CLOSE}"
