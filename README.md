@@ -10,7 +10,6 @@ A lightweight, secure, and customizable password and words generator for command
 ## ✨ Features
 
 - Generate cryptographically secure passwords using /dev/urandom
-- 
 - Password generated direct on your clippboard (Ctrl+C) - look dependencies
 - Blazing fast execution 
 - Customizable password length and complexity
