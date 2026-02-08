@@ -1,9 +1,9 @@
-# shellPass - Secure Password Generator for Terminal
+# shellpass - Secure Password Generator for Terminal
 
-[![Release](https://img.shields.io/badge/version-4.1.1-blue)](https://github.com/mateuscomh/shellPass/releases/latest)
-[![License](https://img.shields.io/badge/license-GPL--3.0-orange)](https://github.com/mateuscomh/shellPass/blob/main/LICENSE)
-[![Build Status](https://github.com/mateuscomh/shellPass/actions/workflows/super-linter.yml/badge.svg)](https://github.com/mateuscomh/shellPass/actions/workflows/super-linter.yml)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mateuscomh/shellPass/pulls)
+[![Release](https://img.shields.io/badge/version-4.1.1-blue)](https://github.com/mateuscomh/shellpass/releases/latest)
+[![License](https://img.shields.io/badge/license-GPL--3.0-orange)](https://github.com/mateuscomh/shellpass/blob/main/LICENSE)
+[![Build Status](https://github.com/mateuscomh/shellpass/actions/workflows/super-linter.yml/badge.svg)](https://github.com/mateuscomh/shellpass/actions/workflows/super-linter.yml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mateuscomh/shellpass/pulls)
 
 A lightweight, secure, and customizable password and words generator for command-line enthusiasts.
 
@@ -22,38 +22,38 @@ A lightweight, secure, and customizable password and words generator for command
 
 ### Basic Installation
 ```bash
-git clone https://github.com/mateuscomh/shellPass.git
-cd shellPass
-chmod +x shellPass.sh
+git clone https://github.com/mateuscomh/shellpass.git
+cd shellpass
+chmod +x shellpass.sh
 ```
 ### System-wide Installation (Optional)
 ```bash
-sudo cp shellPass.sh /usr/local/bin/shellpass
+sudo cp shellpass.sh /usr/local/bin/shellpass
 ```
 Basic password generation:
     To generate a default password, run and set quantity and complexity of password:
 ```bash
-$ ./shellPass.sh
+$ ./shellpass.sh
 ```
 To generate a password with specific length (ex: 20 chars):
 ```bash
-$ ./shellPass.sh 20
+$ ./shellpass.sh 20
 ```
 
 To show the help menu with all available options:
 ```bash
-$ ./shellPass.sh -h
+$ ./shellpass.sh -h
 ```
 
 For quick access, add this alias to your shell configuration file (.bashrc, .zshrc, etc.):
 ```bash
-$ alias passgen='~/path/to/shellPass.sh'
+$ alias passgen='~/path/to/shellpass.sh'
 ```
 
 ## Contribution
 Contributions to this project are welcome. If you have any suggestions, bug fixes, or improvements, feel free to open an issue or submit a pull request.
 
 ## License
-This project is licensed under the GPL-3.0 License. See the [LICENSE](https://github.com/mateuscomh/shellPass/blob/main/LICENSE) file for more details.
+This project is licensed under the GPL-3.0 License. See the [LICENSE](https://github.com/mateuscomh/shellpass/blob/main/LICENSE) file for more details.
 
 Made with ❤️ by [Matheus Martins](https://www.linkedin.com/in/matheushsmartins)
