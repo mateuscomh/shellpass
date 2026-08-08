@@ -201,7 +201,7 @@ _writeFile() {
 	AB_DIR=$(dirname "$AB_SCRIPT_PATH")
 	local HISTORY_FILE="$AB_DIR/history.log"
 
-	[ -f "$HISTORY_FILE" ] && tail -n9 "$HISTORY_FILE" >"${HISTORY_FILE}.tmp"
+	[ -f "$HISTORY_FILE" ] && tail -n2 "$HISTORY_FILE" >"${HISTORY_FILE}.tmp"
 	mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE" 2>/dev/null || touch "$HISTORY_FILE"
 	echo "$(date '+%d/%m/%y %H:%M:%S') - $PASS" >>"$HISTORY_FILE"
 }
