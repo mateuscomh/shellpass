@@ -4,7 +4,7 @@ export LANG=C
 #----------------------------------------------------|
 #  Matheus Martins 3mhenrique@gmail.com
 #  https://github.com/mateuscomh/yoURL
-#  30/03/2021 4.1.1 GPL3
+#  30/03/2021 4.2.1 GPL3
 #  Generate secure passwords on terminal
 #  Depends: words; xclip on GNU/Linux / pbcopy on IOS
 #----------------------------------------------------|
@@ -18,11 +18,26 @@ main() {
 ███████║██║  ██║███████╗███████╗███████╗██║     ██║  ██║███████║███████║
 ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═▀▀▀══╝╚═▀▀▀══╝"
 
-	local VERSION="Ver:4.1.1"
+	local VERSION="Ver:4.2.0"
 	local AUTHOR="Matheus Martins-3mhenrique@gmail.com"
+	local ENABLE_LOG=false
+	local ARGS=()
 	local MAX="$1"
 	local TYPE="$2"
 
+	for arg in "$@"; do
+		case "$arg" in
+		--log)
+			ENABLE_LOG=true
+			;;
+		*)
+			ARGS+=("$arg")
+			;;
+		esac
+	done
+
+	local MAX="${ARGS[0]}"
+	local TYPE="${ARGS[1]}"
 	echo -e "$USAGE"
 
 	case "$MAX" in
@@ -37,9 +52,9 @@ main() {
 		;;
 	esac
 
-	_generateCharSets
+	_generateCharSets || exit 1
 	_makePass
-	_writeFile
+	[[ "$ENABLE_LOG" == true ]] &&_writeFile
 }
 
 _checkSize() {
@@ -143,7 +158,7 @@ _generateCharSets() {
 
 _makePass() {
 	if [[ "$TYPE" -eq 4 ]]; then
-		PASS=$(echo "$CPX" | tr '[:upper:]' '[:lower:]' | iconv -f UTF-8 -t ASCII//TRANSLIT | sed "s/'s//g")
+		PASS=$(printf '%s' "$CPX" | LC_ALL=C.UTF-8 iconv -f UTF-8 -t ASCII//TRANSLIT | tr '[:upper:]' '[:lower:]' | sed "s/'s//g")
 	else
 		local charsets
 		case "$TYPE" in
@@ -177,8 +192,11 @@ _makePass() {
 	Darwin) printf %s "$PASS" | pbcopy ;;
 	Linux)
 		if grep -iq Microsoft /proc/version; then
-			printf "%s" "$PASS" | clip.exe
-			command -v clip.exe >/dev/null || echo "clip.exe não encontrado"
+			if command -v clip.exe >/dev/null; then
+				printf "%s" "$PASS" | clip.exe
+			else
+				echo "clip.exe não encontrado" >&2
+			fi
 		elif command -v xclip >/dev/null && [ -n "$DISPLAY" ]; then
 			printf "%s" "$PASS" | xclip -sel clip
 		fi
